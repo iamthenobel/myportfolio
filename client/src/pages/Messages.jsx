@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from "react";
 
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD?.replace(/['\"]+/g, "") || "";
+const API_URL = import.meta.env.VITE_API_URL?.replace(/['"]+/g, "") || "";
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD?.replace(/['"]+/g, "") || "";
 
 const Messages = () => {
   const [showModal, setShowModal] = useState(true);
@@ -13,7 +15,7 @@ const Messages = () => {
   useEffect(() => {
     if (isAuthorized) {
       setIsLoading(true);
-      fetch("http://localhost:3000/api/messages")
+      fetch(`${API_URL.replace(/\/$/, "")}/api/messages`)
         .then((res) => res.json())
         .then((data) => {
           setMessages(data);
