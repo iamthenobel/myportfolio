@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agada Emmanuel - Resume</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        :root {
+            --sidebar-color: #d9d9d9;
+            --header-color: #63575b;
+            --accent-red: #e82414;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --skill-bg: #ffffff;
+            --skill-fill: #cccccc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .resume-paper {
+            width: 1000px;
+            background-color: white;
+            display: flex;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* LEFT SIDEBAR */
+        .sidebar {
+            width: 300px;
+            background-color: var(--sidebar-color);
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-circle {
+            width: 180px;
+            height: 180px;
+            background-color: var(--header-color);
+            border-radius: 50%;
+            margin: 0 auto 50px auto;
+            overflow: hidden;
+            border: 4px solid var(--header-color);
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-h2 {
+            font-size: 22px;
+            color: var(--text-gray);
+            text-transform: capitalize;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .skill-group { margin-bottom: 15px; }
+        .skill-label { font-size: 13px; color: var(--text-gray); margin-bottom: 5px; }
+        .bar-outer { height: 10px; background: var(--skill-bg); border-radius: 5px; width: 100%; }
+        .bar-inner { height: 100%; background: var(--skill-fill); border-radius: 5px; }
+
+        .contact-row {
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: var(--text-dark);
+            word-wrap: break-word;
+        }
+        .contact-label { font-weight: bold; color: var(--text-gray); margin-bottom: 2px; display: block; }
+
+        /* RIGHT CONTENT */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-box {
+            background-color: var(--header-color);
+            padding: 50px;
+            color: white;
+        }
+
+        .mobile-profile {
+            display: none;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mobile-profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        .header-box h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .header-box p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .body-padding {
+            padding: 50px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: var(--text-gray);
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            margin-top: 20px;
+        }
+
+        .exp-item { margin-bottom: 30px; }
+        .exp-header { font-size: 19px; font-weight: bold; color: var(--text-dark); }
+        .exp-sub { font-size: 16px; color: var(--text-gray); margin-bottom: 15px; }
+        
+        .proj-title { font-weight: bold; font-size: 14px; margin-top: 15px; color: #444; }
+        .proj-link { font-size: 13px; color: var(--text-gray); text-decoration: none; margin-bottom: 10px; display: block; text-decoration: underline;}
+
+        ul { list-style-type: disc; margin-left: 20px; }
+        li { font-size: 14px; color: var(--text-gray); margin-bottom: 6px; line-height: 1.4; }
+
+        .edu-top { display: flex; justify-content: space-between; align-items: baseline; }
+        .edu-date { font-size: 13px; color: var(--text-gray); }
+
+        .stars { color: #888; margin-top: 5px; }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .resume-paper {
+                max-width: 900px;
+            }
+            .sidebar {
+                width: 280px;
+                padding: 30px 20px;
+            }
+            .profile-circle {
+                width: 160px;
+                height: 160px;
+            }
+            .header-box {
+                padding: 40px;
+            }
+            .header-box h1 {
+                font-size: 36px;
+            }
+            .body-padding {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-paper {
+                flex-direction: column;
+                max-width: 100%;
+                width: 100%;
+                min-height: auto;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+            .sidebar .profile-circle {
+                display: none;
+            }
+            .main-content {
+                width: 100%;
+                order: -1; /* Main content on top */
+            }
+            .mobile-profile {
+                display: block;
+            }
+            .profile-circle {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 30px;
+            }
+            .main-content {
+                width: 100%;
+            }
+            .header-box {
+                padding: 30px 20px;
+                text-align: center;
+            }
+            .header-box h1 {
+                font-size: 28px;
+            }
+            .header-box p {
+                font-size: 13px;
+            }
+            .body-padding {
+                padding: 20px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .exp-header {
+                font-size: 17px;
+            }
+            .exp-sub {
+                font-size: 14px;
+            }
+            ul {
+                margin-left: 15px;
+            }
+            li {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                padding: 15px;
+            }
+            .profile-circle {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+            .sidebar-h2 {
+                font-size: 18px;
+            }
+            .header-box {
+                padding: 20px 15px;
+            }
+            .header-box h1 {
+                font-size: 24px;
+            }
+            .body-padding {
+                padding: 15px;
+            }
+            .section-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-paper">
+    <div class="sidebar">
+        <div class="profile-circle">
+            <img src="https://i.postimg.cc/g0gpmbZJ/profile-professional_(1).png" alt="Agada Emmanuel">
+        </div>
+
+        <div class="sidebar-section">
+            <h2 class="sidebar-h2">Skills</h2>
+            <div class="skill-group">
+                <div class="skill-label">React</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">HTML/CSS</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">Tailwind CSS</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">Javascript</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">Supabase</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">Node.js/Express.js</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">SQLite</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">GIT/Version control</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">UI/UX Design</div>
+                <div class="bar-outer"><div class="bar-inner" style="width: 95%;"></div></div>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h2 class="sidebar-h2">Languages</h2>
+            <div class="skill-label">English</div>
+            <div class="stars">
+                <i data-feather="star" size="14"></i>
+                <i data-feather="star" size="14"></i>
+                <i data-feather="star" size="14"></i>
+                <i data-feather="star" size="14"></i>
+                <i data-feather="star" size="14"></i>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <h2 class="sidebar-h2">CONTACT</h2>
+            <div class="contact-row">
+                <span class="contact-label">Email</span>
+                iamtheboss357286@gmail.com
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">Phone</span>
+                +2347071337953
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">Address</span>
+                Osun State, Nigeria Oshogbo Osun Nigeria
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header-box">
+            <div class="mobile-profile">
+                <img src="https://i.postimg.cc/g0gpmbZJ/profile-professional_(1).png" alt="Agada Emmanuel">
+            </div>
+            <h1>Agada Emmanuel</h1>
+            <p>Full Stack Web Developer with 3+ years of hands-on experience building modern, responsive, and scalable web applications using JavaScript-based technologies. Strong background in frontend UI/UX, backend development with Express, and database-driven applications. Experienced in designing and deploying real-world products from idea to production, with a focus on clean code, usability, and performance. Seeking to contribute to early-stage startups and fast-moving teams globally.</p>
+        </div>
+
+        <div class="body-padding">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="exp-item">
+                <div class="exp-header">Personal & Startup Projects</div>
+                <div class="exp-sub">Full Stack Developer</div>
+
+                <div class="proj-title">Cloud File Storage Web Application</div>
+                <a href="https://myspacely.netlify.app/" class="proj-link">https://myspacely.netlify.app/</a>
+                <ul>
+                    <li>Built a full-stack web application for secure file upload, storage, and retrieval</li>
+                    <li>Implemented user authentication and session-based access</li>
+                    <li>Developed backend file handling APIs using Express.js</li>
+                    <li>Integrated database storage using Supabase / SQLite</li>
+                    <li>Deployed the application for real-world usage</li>
+                </ul>
+
+                <div class="proj-title" style="margin-top: 25px;">Personal Portfolio Website</div>
+                <a href="https://theboss-portfolio.netlify.app" class="proj-link">https://theboss-portfolio.netlify.app/</a>
+                <ul>
+                    <li>Designed and developed a modern developer portfolio using React and Tailwind CSS</li>
+                    <li>Emphasized clean UI/UX, accessibility, and responsiveness across devices</li>
+                    <li>Showcased projects, skills, and contact information in a professional format</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title">Education</h2>
+            <div class="exp-item">
+                <div class="edu-top">
+                    <div class="exp-header">University of Ilorin | Ilorin Nigeria</div>
+                    <div class="edu-date">Nov.2021 - Nov.2025</div>
+                </div>
+                <div class="exp-sub">Chemistry , B.Sc.</div>
+                <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6;">
+                    I hold a B.Sc. in Chemistry from the University of Ilorin, Nigeria, where I focused on computational and analytical chemistry. My studies involved data analysis, problem-solving, and several coursework areas related to computer science and computational methods, which strengthened my logical thinking and technical foundation now applied to software development.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    feather.replace();
+</script>
+</body>
+</html>
