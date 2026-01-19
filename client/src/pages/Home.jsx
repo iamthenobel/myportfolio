@@ -435,9 +435,9 @@ const AboutSection = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg">
-                    Download CV
-                  </button>
+                  <a href='./CV.html' className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg">
+                    View my CV
+                  </a>
                   <button
                     className="px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium shadow-sm hover:shadow-md"
                     onClick={() => navigate('/contact', typeof setCurrentPath !== 'undefined' ? setCurrentPath : undefined)}
@@ -480,7 +480,7 @@ const AboutSection = () => {
                       <div>
                         <h4 className="font-semibold text-gray-800">B.Sc. Chemistry</h4>
                         <p className="text-gray-600">University of Lagos, Nigeria</p>
-                        <p className="text-sm text-gray-500 mt-1">2015 - 2019</p>
+                        <p className="text-sm text-gray-500 mt-1">2021 - 2025</p>
                       </div>
                     </li>
                     <li className="flex items-start">
@@ -491,7 +491,7 @@ const AboutSection = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-800">Full Stack Web Development</h4>
-                        <p className="text-gray-600">Self-Taught & Online Courses</p>
+                        <p className="text-gray-600">Online Courses and Physical Trainings</p>
                         <p className="text-sm text-gray-500 mt-1">2019 - Present</p>
                       </div>
                     </li>
