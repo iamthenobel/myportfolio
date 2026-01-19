@@ -435,7 +435,7 @@ const AboutSection = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <a href='./CV.html' className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg">
+                  <a href='CV.html' className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg">
                     View my CV
                   </a>
                   <button
