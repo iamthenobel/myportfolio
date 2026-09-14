@@ -435,9 +435,14 @@ const AboutSection = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <a href='CV.html' className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg">
-                    View my CV
-                  </a>
+                  <a
+  href="./assets/Agada_Emmanuel_Final_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg"
+>
+  View my CV
+</a>
                   <button
                     className="px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium shadow-sm hover:shadow-md"
                     onClick={() => navigate('/contact', typeof setCurrentPath !== 'undefined' ? setCurrentPath : undefined)}
