@@ -728,6 +728,13 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      title: "Hash Messenger",
+      description: "Messaging with modern realtime architecture, zero tracking, and encrypted conversations.",
+      imageUrl: "https://i.postimg.cc/66b3jjKg/messenger.png",
+      demoLink: "https://hash-messenger.netlify.app/",
+      repoLink: "#",
+    },
+    {
       title: "MySpace - Digital Space",
       description: "A simple site that allows users to store their favorite links, images, and notes in a personal space.",
       imageUrl: "https://i.postimg.cc/yx87rBNB/myspace.png",
