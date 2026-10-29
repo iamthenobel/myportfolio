@@ -728,6 +728,13 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      title: "Music Promotion Template",
+      description: "Responsive React, TypeScript, and Vite recreation of Ditto Music’s promo page, rebranded as HASHEE (#@$#££). Static demo; links don’t process payments or account actions.",
+      imageUrl: "https://i.postimg.cc/jSBq4MRy/msl.png",
+      demoLink: "https://hasheemusic.netlify.app/",
+      repoLink: "#",
+    },
+    {
       title: "Hash Messenger",
       description: "Messaging with modern realtime architecture, zero tracking, and encrypted conversations.",
       imageUrl: "https://i.postimg.cc/66b3jjKg/messenger.png",
